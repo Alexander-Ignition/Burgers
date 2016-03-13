@@ -14,6 +14,7 @@
 		11DD0CC61C95872F00BAB7A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11DD0CC51C95872F00BAB7A5 /* Assets.xcassets */; };
 		11DD0CC91C95872F00BAB7A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DD0CC71C95872F00BAB7A5 /* LaunchScreen.storyboard */; };
 		11DD0CD41C95873000BAB7A5 /* BurgersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD0CD31C95873000BAB7A5 /* BurgersTests.m */; };
+		D9B2F076D26A3A8D2FECB60B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D19242C8A4B0A38E304A5B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,9 @@
 		11DD0CCF1C95873000BAB7A5 /* BurgersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BurgersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DD0CD31C95873000BAB7A5 /* BurgersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BurgersTests.m; sourceTree = "<group>"; };
 		11DD0CD51C95873000BAB7A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D3D49FC84C97948613791E1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C2D19242C8A4B0A38E304A5B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E502E540F008DBF1F804E474 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B2F076D26A3A8D2FECB60B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,8 @@
 				11DD0CB81C95872F00BAB7A5 /* Burgers */,
 				11DD0CD21C95873000BAB7A5 /* BurgersTests */,
 				11DD0CB71C95872F00BAB7A5 /* Products */,
+				98ACE0EB061A4391D299FD3E /* Pods */,
+				332AC436E8542C261E098048 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +118,23 @@
 			path = BurgersTests;
 			sourceTree = "<group>";
 		};
+		332AC436E8542C261E098048 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2D19242C8A4B0A38E304A5B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		98ACE0EB061A4391D299FD3E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D3D49FC84C97948613791E1 /* Pods.debug.xcconfig */,
+				E502E540F008DBF1F804E474 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +142,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11DD0CD81C95873000BAB7A5 /* Build configuration list for PBXNativeTarget "Burgers" */;
 			buildPhases = (
+				5AAB82B05E8FDE40BE7307C3 /* Check Pods Manifest.lock */,
 				11DD0CB21C95872F00BAB7A5 /* Sources */,
 				11DD0CB31C95872F00BAB7A5 /* Frameworks */,
 				11DD0CB41C95872F00BAB7A5 /* Resources */,
+				F0548953AA9F09BF71480E22 /* Embed Pods Frameworks */,
+				BFF03A5A4C3EB830F8739A0A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +232,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5AAB82B05E8FDE40BE7307C3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BFF03A5A4C3EB830F8739A0A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0548953AA9F09BF71480E22 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		11DD0CB21C95872F00BAB7A5 /* Sources */ = {
@@ -337,6 +412,7 @@
 		};
 		11DD0CD91C95873000BAB7A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D3D49FC84C97948613791E1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Burgers/Info.plist;
@@ -348,6 +424,7 @@
 		};
 		11DD0CDA1C95873000BAB7A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E502E540F008DBF1F804E474 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Burgers/Info.plist;
@@ -400,6 +477,7 @@
 				11DD0CDA1C95873000BAB7A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		11DD0CDB1C95873000BAB7A5 /* Build configuration list for PBXNativeTarget "BurgersTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +486,7 @@
 				11DD0CDD1C95873000BAB7A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
